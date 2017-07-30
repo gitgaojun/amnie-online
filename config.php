@@ -6,9 +6,9 @@ define('HTTP_SERVER', 'http://54.169.108.44/');
 define('HTTPS_SERVER', 'http://54.169.108.44/');
 
 // DIR
-define('DIR_APPLICATION', '/data/www/byifree-online/upload/catalog/');
-define('DIR_SYSTEM', '/data/www/byifree-online/upload/system/');
-define('DIR_IMAGE', '/data/www/byifree-online/upload/image/');
+define('DIR_APPLICATION', '/data/www/amnie-online/catalog/');
+define('DIR_SYSTEM', '/data/www/amnie-online/system/');
+define('DIR_IMAGE', '/data/www/amnie-online/image/');
 define('DIR_STORAGE', DIR_SYSTEM . 'storage/');
 define('DIR_LANGUAGE', DIR_APPLICATION . 'language/');
 define('DIR_TEMPLATE', DIR_APPLICATION . 'view/theme/');
@@ -25,6 +25,6 @@ define('DB_DRIVER', 'mpdo');
 define('DB_HOSTNAME', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
-define('DB_DATABASE', 'byifree-online');
+define('DB_DATABASE', 'amnie-online');
 define('DB_PORT', '3306');
 define('DB_PREFIX', '');
