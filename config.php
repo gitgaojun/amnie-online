@@ -1,9 +1,9 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://54.169.108.44/');
+define('HTTP_SERVER', 'http://dev.amnie.local/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://54.169.108.44/');
+define('HTTPS_SERVER', 'http://dev.amnie.local/');
 
 // DIR
 define('DIR_APPLICATION', '/data/www/amnie-online/catalog/');
