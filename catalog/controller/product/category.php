@@ -1,5 +1,11 @@
 <?php
 class ControllerProductCategory extends Controller {
+
+    public function childCategoryList()
+    {
+        echo 'hello world';exit;
+    }
+
 	public function index() {
 		$this->load->language('product/category');
 
