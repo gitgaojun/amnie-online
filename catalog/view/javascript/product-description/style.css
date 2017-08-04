@@ -8044,7 +8044,7 @@ p,ul,ol,dl,blockquote,pre,address,fieldset,figure {
 }
 
 *+p,*+ul,*+ol,*+dl,*+blockquote,*+pre,*+address,*+fieldset,*+figure {
-    margin-top: 20px
+    margin-top: 0px
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -17665,7 +17665,7 @@ html {
 }
 
 h1,h2,h3,h4,h5 {
-    line-height: 1.2857em;
+    line-height: 1.1;
     margin: calc(2rem - .14285em) 0 1rem;
     font-weight: 300;
     padding: 0
