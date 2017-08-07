@@ -504,8 +504,9 @@ class ControllerProductCategory extends Controller {
 			$this->document->setTitle($category_info['meta_title']);
 			$this->document->setDescription($category_info['meta_description']);
 			$this->document->setKeywords($category_info['meta_keyword']);
-
+            
 			$data['heading_title'] = $category_info['name'];
+            $data['heading_title_ucfirst'] = ucfirst(strtolower($category_info['name']));
 
 			$data['text_compare'] = sprintf($this->language->get('text_compare'), (isset($this->session->data['compare']) ? count($this->session->data['compare']) : 0));
 
