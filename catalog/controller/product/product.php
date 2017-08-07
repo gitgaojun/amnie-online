@@ -159,6 +159,8 @@ class ControllerProductProduct extends Controller {
 		$product_info = $this->model_catalog_product->getProduct($product_id);
 
 		if ($product_info) {
+		    $data['product_location'] = $product_info['location'];
+
 			$url = '';
 
 			if (isset($this->request->get['path'])) {
@@ -434,8 +436,7 @@ class ControllerProductProduct extends Controller {
 					);
 				}
 			}
-
-			$data['recurrings'] = $this->model_catalog_product->getProfiles($this->request->get['product_id']);
+ 			$data['recurrings'] = $this->model_catalog_product->getProfiles($this->request->get['product_id']);
 
 			$this->model_catalog_product->updateViewed($this->request->get['product_id']);
 			
