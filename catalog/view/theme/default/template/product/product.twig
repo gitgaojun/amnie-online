@@ -366,32 +366,17 @@
 
                             <div class="color-switcher" data-uk-slideset="{controls: '#color-switcher',filter: 'black',default: 5,animation: 'scale', duration: 00}">
                                 <div class="uk-slidenav-position">
-
-
-                                    <ul class="uk-slideset uk-grid uk-flex-center uk-flex-column uk-grid-width-1-5">
-
-                                        <li data-uk-filter="black" class="uk-margin-bottom uk-thumbnail-expand uk-active" style="">
-                                            <a data-uk-slideshow-item="0" class="">
-                                                <img src="catalog/view/javascript/product-description/pl-a1-1-black-150x150.jpg" width="150" height="150"></a></li>
-
-                                        <li data-uk-filter="black" class="uk-margin-bottom uk-thumbnail-expand uk-active" style="">
-                                            <a data-uk-slideshow-item="1" class="uk-active">
-                                                <img src="catalog/view/javascript/product-description/pl-a1-2-black-150x150.jpg" width="150" height="150"></a></li>
-
-                                        <li data-uk-filter="black" class="uk-margin-bottom uk-thumbnail-expand uk-active" style="">
-                                            <a data-uk-slideshow-item="2" class="">
-                                                <img src="catalog/view/javascript/product-description/pl-a1-3-black-150x150.jpg" width="150" height="150"></a></li>
-
-                                        <li data-uk-filter="black" class="uk-margin-bottom uk-thumbnail-expand uk-active" style="">
-                                            <a data-uk-slideshow-item="3" class="">
-                                                <img src="catalog/view/javascript/product-description/pl-a1-8-black-150x150.jpg" width="150" height="150"></a></li>
-
-                                        <li data-uk-filter="black" class="uk-margin-bottom uk-thumbnail-expand uk-active" style="">
-                                            <a data-uk-slideshow-item="4" class="">
-                                                <img src="catalog/view/javascript/product-description/pl-a1-4-black-150x150.jpg" width="150" height="150"></a></li>
-
-
-                                    </ul>
+                                    {% if images %}
+                                        <ul class="uk-slideset uk-grid uk-flex-center uk-flex-column uk-grid-width-1-5">
+                                            {% for image in images %}
+                                                <li data-uk-filter="black" class="uk-margin-bottom uk-thumbnail-expand uk-active" style="">
+                                                    <a data-uk-slideshow-item="0" class="" title="{{ heading_title }}">
+                                                        <img src="{{ image.thumb }}" title="{{ heading_title }}" alt="{{ heading_title }}" width="150" height="150">
+                                                    </a>
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
 
                                 </div>
 
@@ -492,34 +477,35 @@
             </div>
 
             <div class="uk-article uk-width-small-1-1 uk-width-medium-1-2 mainc">
-                <h1 class="uk-text-xlarge">Optic 3-in-1 Smartphone Lens Set</h1>
+                <h1 class="uk-text-xlarge">{{ heading_title }}</h1>
                 <form class="ui form amazonform uk-margin-large-top uk-text-center-small" id="amazoncountry">
                     <ul>
-                        <li><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u25cfOptic 3-in-1 Lens Kit includes Wide Angle + Macro + Fisheye Lenses to adapt to a variety of photography scenarios - Travel photos, flowers, unique selfies, or detailed close-ups \n\u25cfEasily affix the lenses with perfect alignment to any mobile device with included clips&quot;}" data-sheets-userformat="{&quot;2&quot;:15107,&quot;3&quot;:{&quot;1&quot;:2,&quot;2&quot;:&quot;0.00_ &quot;,&quot;3&quot;:1},&quot;4&quot;:{&quot;1&quot;:2,&quot;2&quot;:16777215},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:{&quot;1&quot;:2,&quot;2&quot;:1118481},&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:10}">Optic
- 3-in-1 Lens Kit includes Wide Angle + Macro + Fisheye Lenses to adapt 
-to a variety of photography scenarios - Travel photos, flowers, unique 
-selfies, or detailed close-ups </span></li>
-                        <li><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u25cfOptic 3-in-1 Lens Kit includes Wide Angle + Macro + Fisheye Lenses to adapt to a variety of photography scenarios - Travel photos, flowers, unique selfies, or detailed close-ups \n\u25cfEasily affix the lenses with perfect alignment to any mobile device with included clips&quot;}" data-sheets-userformat="{&quot;2&quot;:15107,&quot;3&quot;:{&quot;1&quot;:2,&quot;2&quot;:&quot;0.00_ &quot;,&quot;3&quot;:1},&quot;4&quot;:{&quot;1&quot;:2,&quot;2&quot;:16777215},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:{&quot;1&quot;:2,&quot;2&quot;:1118481},&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:10}">Optic
- 3-in-1 Lens Kit includes Wide Angle + Macro + Fisheye Lenses to adapt 
-to a variety of photography scenarios - Travel photos, flowers, unique 
-selfies, or detailed close-ups </span></li>
-                        <li><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u25cfOptic 3-in-1 Lens Kit includes Wide Angle + Macro + Fisheye Lenses to adapt to a variety of photography scenarios - Travel photos, flowers, unique selfies, or detailed close-ups \n\u25cfEasily affix the lenses with perfect alignment to any mobile device with included clips&quot;}" data-sheets-userformat="{&quot;2&quot;:15107,&quot;3&quot;:{&quot;1&quot;:2,&quot;2&quot;:&quot;0.00_ &quot;,&quot;3&quot;:1},&quot;4&quot;:{&quot;1&quot;:2,&quot;2&quot;:16777215},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:{&quot;1&quot;:2,&quot;2&quot;:1118481},&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:10}">Easily affix the lenses with perfect alignment to any mobile device with included clips</span></li>
+                        <li>
+                            <span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u25cfOptic 3-in-1 Lens Kit includes Wide Angle + Macro + Fisheye Lenses to adapt to a variety of photography scenarios - Travel photos, flowers, unique selfies, or detailed close-ups \n\u25cfEasily affix the lenses with perfect alignment to any mobile device with included clips&quot;}" data-sheets-userformat="{&quot;2&quot;:15107,&quot;3&quot;:{&quot;1&quot;:2,&quot;2&quot;:&quot;0.00_ &quot;,&quot;3&quot;:1},&quot;4&quot;:{&quot;1&quot;:2,&quot;2&quot;:16777215},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:{&quot;1&quot;:2,&quot;2&quot;:1118481},&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:10}">
+                            {{ description }}
+                            </span>
+                        </li>
+                        {#<li><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u25cfOptic 3-in-1 Lens Kit includes Wide Angle + Macro + Fisheye Lenses to adapt to a variety of photography scenarios - Travel photos, flowers, unique selfies, or detailed close-ups \n\u25cfEasily affix the lenses with perfect alignment to any mobile device with included clips&quot;}" data-sheets-userformat="{&quot;2&quot;:15107,&quot;3&quot;:{&quot;1&quot;:2,&quot;2&quot;:&quot;0.00_ &quot;,&quot;3&quot;:1},&quot;4&quot;:{&quot;1&quot;:2,&quot;2&quot;:16777215},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:{&quot;1&quot;:2,&quot;2&quot;:1118481},&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:10}">Optic#}
+ {#3-in-1 Lens Kit includes Wide Angle + Macro + Fisheye Lenses to adapt #}
+{#to a variety of photography scenarios - Travel photos, flowers, unique #}
+{#selfies, or detailed close-ups </span></li>#}
+                        {#<li><span data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;\u25cfOptic 3-in-1 Lens Kit includes Wide Angle + Macro + Fisheye Lenses to adapt to a variety of photography scenarios - Travel photos, flowers, unique selfies, or detailed close-ups \n\u25cfEasily affix the lenses with perfect alignment to any mobile device with included clips&quot;}" data-sheets-userformat="{&quot;2&quot;:15107,&quot;3&quot;:{&quot;1&quot;:2,&quot;2&quot;:&quot;0.00_ &quot;,&quot;3&quot;:1},&quot;4&quot;:{&quot;1&quot;:2,&quot;2&quot;:16777215},&quot;11&quot;:4,&quot;12&quot;:0,&quot;14&quot;:{&quot;1&quot;:2,&quot;2&quot;:1118481},&quot;15&quot;:&quot;Calibri&quot;,&quot;16&quot;:10}">Easily affix the lenses with perfect alignment to any mobile device with included clips</span></li>#}
                     </ul>						<div class="field">
-                        <div class="ui dropdown selection" tabindex="0">
-                            <input name="amazoncountry" value="http://www.amazon.fr/dp/B016NNIZMW" type="hidden">
-                            <div class="text">France</div>
-                            <i class="dropdown icon" tabindex="0"><div class="menu" tabindex="-1"></div></i>
-                            <div class="menu transition hidden" tabindex="-1">
-                                <div class="item" data-value="http://www.amazon.com/gp/product/B014CXK9FQ/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B014CXK9FQ&amp;keywords=iphone+lens&amp;linkCode=as2&amp;tag=aukeydirect-20&amp;linkId=3LQG3SLGDU3EBGAD" style="">United States</div>
-                                <div class="item" data-value="http://www.amazon.co.uk/dp/B014MC9V4C" style="">United Kingdom</div>
-                                <div class="item" data-value="https://www.amazon.co.jp/dp/B016OI2R48">Japan</div>
-                                <div class="item" data-value="https://www.amazon.ca/dp/B015HD7W9Q" style="">Canada</div>
-                                <div class="item" data-value="http://www.amazon.es/dp/B016U3SIQI">Spain</div>
-                                <div class="item active selected" data-value="http://www.amazon.fr/dp/B016NNIZMW">France</div>
-                                <div class="item" data-value="http://www.amazon.it/dp/B016PMB6YK">Italy</div>
-                            </div>
-                        </div>
-                        <a class="ui primary basic big button submit uk-width-medium-1-1 buyonamazon" href="http://www.amazon.fr/dp/B016NNIZMW">Buy on Amazon</a>
+                        {#<div class="ui dropdown selection" tabindex="0">#}
+                            {#<input name="amazoncountry" value="http://www.amazon.fr/dp/B016NNIZMW" type="hidden">#}
+                            {#<div class="text">France</div>#}
+                            {#<i class="dropdown icon" tabindex="0"><div class="menu" tabindex="-1"></div></i>#}
+                            {#<div class="menu transition hidden" tabindex="-1">#}
+                                {#<div class="item" data-value="http://www.amazon.com/gp/product/B014CXK9FQ/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B014CXK9FQ&amp;keywords=iphone+lens&amp;linkCode=as2&amp;tag=aukeydirect-20&amp;linkId=3LQG3SLGDU3EBGAD" style="">United States</div>#}
+                                {#<div class="item" data-value="http://www.amazon.co.uk/dp/B014MC9V4C" style="">United Kingdom</div>#}
+                                {#<div class="item" data-value="https://www.amazon.co.jp/dp/B016OI2R48">Japan</div>#}
+                                {#<div class="item" data-value="https://www.amazon.ca/dp/B015HD7W9Q" style="">Canada</div>#}
+                                {#<div class="item" data-value="http://www.amazon.es/dp/B016U3SIQI">Spain</div>#}
+                                {#<div class="item active selected" data-value="http://www.amazon.fr/dp/B016NNIZMW">France</div>#}
+                                {#<div class="item" data-value="http://www.amazon.it/dp/B016PMB6YK">Italy</div>#}
+                            {#</div>#}
+                        {#</div>#}
+                        <a class="ui primary basic big button submit uk-width-medium-1-1 buyonamazon" href="{{ product_location }}">Buy on Amazon</a>
                     </div>
                 </form>
 
@@ -530,18 +516,6 @@ selfies, or detailed close-ups </span></li>
     </div>
     <div class="video-list preload">
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- 底部                            -->
     <div class="Footer" data-reactid="156">
