@@ -16,6 +16,31 @@ class ControllerCommonHome extends Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 
+        $homeSaleCategorie1 = $this->model_catalog_category->getHomeSaleCategorie('home1');
+        $homeSaleCategorie1 = $homeSaleCategorie1[0];
+        $homeSaleCategorie2 = $this->model_catalog_category->getHomeSaleCategorie('home2');
+        $homeSaleCategorie2 = $homeSaleCategorie2[0];
+        $homeSale1List = array();
+        $homeSale2List = array();
+//        var_dump($homeSaleCategorie1);exit;
+//        var_dump($homeSaleCategorie1);exit;
+        $home1descArray = explode("##", $homeSaleCategorie1['meta_keyword']);
+        $home2descArray = explode("##", $homeSaleCategorie2['meta_keyword']);
+        foreach($home1descArray as $k => $i) {
+            $homeSale1List[$k] = $info = $this->model_catalog_product->getProductBySku($i);
+            $homeSale1List[$k]['href'] = $this->url->link('product/product', 'product_id=' . $info['product_id']);
+        }
+        foreach($home2descArray as $i) {
+            $homeSale2List[$k] = $info = $this->model_catalog_product->getProductBySku($i);
+            $homeSale2List[$k]['href'] = $this->url->link('product/product', 'product_id=' . $info['product_id']);
+        }
+//        var_dump($homeSale1List);exit;
+        $data['list1']['home_sale_product'] = $homeSale1List;
+        $data['list1']['category'] = $homeSaleCategorie1;
+        $data['list2']['category'] = $homeSaleCategorie2;
+        $data['list2']['home_sale_product'] = $homeSale2List;
+//        var_dump($data['list1']);exit;
+
 		$this->response->setOutput($this->load->view('common/home', $data));
 	}
 }
