@@ -212,11 +212,11 @@
               <div class="row">
                 <div class="col-md-12 no-padding text-colour-white link-colour-white appear-animation fadeInLeft animated appear-animation-visible" data-appear-animation="fadeInLeft" style="">
                   <div class="promo-banner">
-                    <a href="/mobile-accessories/AMNIE-hd1000-headphones-with-bass-driven-sound.html"><img alt="HD1000" src="catalog/view/javascript/common/hd1000.jpg" class="img-responsive"></a>
+                    <a href="{{ list1.category.meta_description }}"><img alt="HD1000" src="/image/{{ list1.category.image }}" class="img-responsive"></a>
                     <div class="text-container text-center">
                       <div class="text-hover">
-                        <h2 class="title-category">FEEL A NEW KIND OF SOUND</h2>
-                        <a class="a-default" href="/mobile-accessories/AMNIE-hd1000-headphones-with-bass-driven-sound.html">VIEW</a>		</div>
+                        <h2 class="title-category">{{ list1.category.meta_title }}</h2>
+                        <a class="a-default" href="{{ list1.category.meta_description }}">VIEW</a>		</div>
                     </div>
                   </div>			</div>
               </div>								</div>
@@ -237,152 +237,197 @@
 
                         <div class="owl-wrapper-outer"><div class="owl-wrapper" style="width: 1904px; left: 0px; display: block;"><div class="owl-item" style="width: 952px;"><div class="item">
 
-
-                                <div class="col-md-4 col-sm-6 col-xs-12">
-                                  <div class="product-content">
-                                    <div class="product-top">
-                                      <a href="/wireless-portable-speaker-black.html" title="Wireless Portable Speaker - Black " class="product-image">
-                                        <img src="catalog/view/javascript/common/85902339_1__002.jpg" alt="Wireless Portable Speaker - Black " class="img-responsive">
-                                        <img src="catalog/view/javascript/common/85902339_1_.jpg" alt="Wireless Portable Speaker - Black " class="img-responsive img-two">
-                                      </a>
-                                      <div class="product-label new-label"><span class="new">New</span></div><div class="product-label sale-label"><span class="sale">Sale</span></div>						<div class="controls">
-                                        <div class="add-to-cart">
+                                {% for i in list1.home_sale_product %}
+                                  <div class="col-md-4 col-sm-6 col-xs-12">
+                                    <div class="product-content">
+                                      <div class="product-top">
+                                        <a href="{{ i.href }}" title="{{ i.meta_title }}" class="product-image">
+                                          <img src="/image/{{ i.image }}" alt="{{ i.meta_title }}" class="img-responsive">
+                                        </a>
+                                        <div class="product-label new-label"><span class="new">New</span></div><div class="product-label sale-label"><span class="sale">Sale</span></div>						<div class="controls">
+                                          <div class="add-to-cart">
+                                          </div>
+                                          <ul class="icon-links pull-right">
+                                            <li><button type="button" title="Add to Compare" ><em class="fa fa-retweet"></em></button></li>
+                                          </ul>
                                         </div>
-                                        <ul class="icon-links pull-right">
-                                          <li><button type="button" title="Add to Compare" onclick="setLocation('/catalog/product_compare/add/product/93/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/form_key/53tgQVLILCtqQD1h/')"><em class="fa fa-retweet"></em></button></li>
-                                        </ul>
                                       </div>
-                                    </div>
-                                    <div class="product-desc">
-                                      <h4 class="product-name"><a href="/wireless-portable-speaker-black.html" title="Wireless Portable Speaker - Black )">Wireless Portable Speaker - Black </a></h4>
+                                      <div class="product-desc">
+                                        <h4 class="product-name"><a href="{{ i.href }}" title="Wireless Portable Speaker - Black )">{{ i.meta_title }}</a></h4>
 
-                                      <div class="ratings">
-                                        <div class="rating-box">
-                                          <div class="rating" style=""></div>
+                                        <div class="ratings">
+                                          <div class="rating-box">
+                                            <div class="rating" style=""></div>
+                                          </div>
+                                          <!--span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='/review/product/list/id/93/'; return false;">0 Review(s)</a></span-->
                                         </div>
-                                        <!--span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='/review/product/list/id/93/'; return false;">0 Review(s)</a></span-->
-                                      </div>
 
 
 
-                                      <div class="price-box">
+                                        <div class="price-box">
 
-                                        <p class="old-price">
+                                          <p class="old-price">
                 <span class="price" id="old-price-93-widget-new-grid">
-                    £29.99                </span>
-                                        </p>
+                    {{ i.price }}                </span>
+                                          </p>
 
-                                        <p class="special-price">
+                                          <p class="special-price">
                 <span class="price" id="product-price-93-widget-new-grid">
-                    £13.99                </span>
-                                        </p>
+                    {{ i.special }}                </span>
+                                          </p>
 
+
+                                        </div>
 
                                       </div>
-
                                     </div>
                                   </div>
-                                </div>
+                                {% endfor %}
+                                {#<div class="col-md-4 col-sm-6 col-xs-12">#}
+                                  {#<div class="product-content">#}
+                                    {#<div class="product-top">#}
+                                      {#<a href="/wireless-portable-speaker-black.html" title="Wireless Portable Speaker - Black " class="product-image">#}
+                                        {#<img src="catalog/view/javascript/common/85902339_1__002.jpg" alt="Wireless Portable Speaker - Black " class="img-responsive">#}
+                                        {#<img src="catalog/view/javascript/common/85902339_1_.jpg" alt="Wireless Portable Speaker - Black " class="img-responsive img-two">#}
+                                      {#</a>#}
+                                      {#<div class="product-label new-label"><span class="new">New</span></div><div class="product-label sale-label"><span class="sale">Sale</span></div>						<div class="controls">#}
+                                        {#<div class="add-to-cart">#}
+                                        {#</div>#}
+                                        {#<ul class="icon-links pull-right">#}
+                                          {#<li><button type="button" title="Add to Compare" onclick="setLocation('/catalog/product_compare/add/product/93/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/form_key/53tgQVLILCtqQD1h/')"><em class="fa fa-retweet"></em></button></li>#}
+                                        {#</ul>#}
+                                      {#</div>#}
+                                    {#</div>#}
+                                    {#<div class="product-desc">#}
+                                      {#<h4 class="product-name"><a href="/wireless-portable-speaker-black.html" title="Wireless Portable Speaker - Black )">Wireless Portable Speaker - Black </a></h4>#}
+
+                                      {#<div class="ratings">#}
+                                        {#<div class="rating-box">#}
+                                          {#<div class="rating" style=""></div>#}
+                                        {#</div>#}
+                                        {#<!--span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='/review/product/list/id/93/'; return false;">0 Review(s)</a></span-->#}
+                                      {#</div>#}
+
+
+
+                                      {#<div class="price-box">#}
+
+                                        {#<p class="old-price">#}
+                {#<span class="price" id="old-price-93-widget-new-grid">#}
+                    {#£29.99                </span>#}
+                                        {#</p>#}
+
+                                        {#<p class="special-price">#}
+                {#<span class="price" id="product-price-93-widget-new-grid">#}
+                    {#£13.99                </span>#}
+                                        {#</p>#}
+
+
+                                      {#</div>#}
+
+                                    {#</div>#}
+                                  {#</div>#}
+                                {#</div>#}
 
 
 
 
-                                <div class="col-md-4 col-sm-6 col-xs-12">
-                                  <div class="product-content">
-                                    <div class="product-top">
-                                      <a href="/AMNIE-earphones-with-microphone.html" title="YSM1000 High Definition In-ear Headphones - With Microphone" class="product-image">
-                                        <img src="catalog/view/javascript/common/img_0935.jpg" alt="YSM1000 High Definition In-ear Headphones - With Microphone" class="img-responsive">
-                                        <img src="catalog/view/javascript/common/img_0935_002.jpg" alt="YSM1000 High Definition In-ear Headphones - With Microphone" class="img-responsive img-two">
-                                      </a>
-                                      <div class="product-label new-label"><span class="new">New</span></div><div class="product-label sale-label"><span class="sale">Sale</span></div>						<div class="controls">
-                                        <div class="add-to-cart">
-                                          <button type="button" title="Add to Cart" class="btn btn-cart btn-default btn-xs" onclick="setLocation('/checkout/cart/add/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/product/89/form_key/53tgQVLILCtqQD1h/')"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
-                                        </div>
-                                        <ul class="icon-links pull-right">
-                                          <li><button type="button" title="Add to Compare" onclick="setLocation('/catalog/product_compare/add/product/89/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/form_key/53tgQVLILCtqQD1h/')"><em class="fa fa-retweet"></em></button></li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                    <div class="product-desc">
-                                      <h4 class="product-name"><a href="/AMNIE-earphones-with-microphone.html" title="YSM1000 High Definition In-ear Headphones - With Microphone)">YSM1000 High Definition In-ear Headphones - With Microphone</a></h4>
+                                {#<div class="col-md-4 col-sm-6 col-xs-12">#}
+                                  {#<div class="product-content">#}
+                                    {#<div class="product-top">#}
+                                      {#<a href="/AMNIE-earphones-with-microphone.html" title="YSM1000 High Definition In-ear Headphones - With Microphone" class="product-image">#}
+                                        {#<img src="catalog/view/javascript/common/img_0935.jpg" alt="YSM1000 High Definition In-ear Headphones - With Microphone" class="img-responsive">#}
+                                        {#<img src="catalog/view/javascript/common/img_0935_002.jpg" alt="YSM1000 High Definition In-ear Headphones - With Microphone" class="img-responsive img-two">#}
+                                      {#</a>#}
+                                      {#<div class="product-label new-label"><span class="new">New</span></div><div class="product-label sale-label"><span class="sale">Sale</span></div>						<div class="controls">#}
+                                        {#<div class="add-to-cart">#}
+                                          {#<button type="button" title="Add to Cart" class="btn btn-cart btn-default btn-xs" onclick="setLocation('/checkout/cart/add/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/product/89/form_key/53tgQVLILCtqQD1h/')"><i class="fa fa-shopping-cart"></i>Add to Cart</button>#}
+                                        {#</div>#}
+                                        {#<ul class="icon-links pull-right">#}
+                                          {#<li><button type="button" title="Add to Compare" onclick="setLocation('/catalog/product_compare/add/product/89/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/form_key/53tgQVLILCtqQD1h/')"><em class="fa fa-retweet"></em></button></li>#}
+                                        {#</ul>#}
+                                      {#</div>#}
+                                    {#</div>#}
+                                    {#<div class="product-desc">#}
+                                      {#<h4 class="product-name"><a href="/AMNIE-earphones-with-microphone.html" title="YSM1000 High Definition In-ear Headphones - With Microphone)">YSM1000 High Definition In-ear Headphones - With Microphone</a></h4>#}
 
-                                      <div class="ratings">
-                                        <div class="rating-box">
-                                          <div class="rating" style=""></div>
-                                        </div>
-                                        <!--span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='/review/product/list/id/89/'; return false;">0 Review(s)</a></span-->
-                                      </div>
-
-
-
-                                      <div class="price-box">
-
-                                        <p class="old-price">
-                <span class="price" id="old-price-89-widget-new-grid">
-                    £39.99                </span>
-                                        </p>
-
-                                        <p class="special-price">
-                <span class="price" id="product-price-89-widget-new-grid">
-                    £24.99                </span>
-                                        </p>
-
-
-                                      </div>
-
-                                    </div>
-                                  </div>
-                                </div>
+                                      {#<div class="ratings">#}
+                                        {#<div class="rating-box">#}
+                                          {#<div class="rating" style=""></div>#}
+                                        {#</div>#}
+                                        {#<!--span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='/review/product/list/id/89/'; return false;">0 Review(s)</a></span-->#}
+                                      {#</div>#}
 
 
 
+                                      {#<div class="price-box">#}
 
-                                <div class="col-md-4 col-sm-6 col-xs-12 row-2-first">
-                                  <div class="product-content">
-                                    <div class="product-top">
-                                      <a href="/bt1050-bluetooth-sports-in-ear-headphones.html" title="BT1050 Bluetooth Sports In-Ear Headphones" class="product-image">
-                                        <img src="catalog/view/javascript/common/img_0016_1.jpg" alt="BT1050 Bluetooth Sports In-Ear Headphones" class="img-responsive">
-                                        <img src="catalog/view/javascript/common/img_0016_1_002.jpg" alt="BT1050 Bluetooth Sports In-Ear Headphones" class="img-responsive img-two">
-                                      </a>
-                                      <div class="product-label new-label"><span class="new">New</span></div><div class="product-label sale-label"><span class="sale">Sale</span></div>						<div class="controls">
-                                        <div class="add-to-cart">
-                                          <button type="button" title="Add to Cart" class="btn btn-cart btn-default btn-xs" onclick="setLocation('/checkout/cart/add/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/product/7/form_key/53tgQVLILCtqQD1h/')"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
-                                        </div>
-                                        <ul class="icon-links pull-right">
-                                          <li><button type="button" title="Add to Compare" onclick="setLocation('/catalog/product_compare/add/product/7/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/form_key/53tgQVLILCtqQD1h/')"><em class="fa fa-retweet"></em></button></li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                    <div class="product-desc">
-                                      <h4 class="product-name"><a href="/bt1050-bluetooth-sports-in-ear-headphones.html" title="BT1050 Bluetooth Sports In-Ear Headphones)">BT1050 Bluetooth Sports In-Ear Headphones</a></h4>
+                                        {#<p class="old-price">#}
+                {#<span class="price" id="old-price-89-widget-new-grid">#}
+                    {#£39.99                </span>#}
+                                        {#</p>#}
 
-                                      <div class="ratings">
-                                        <div class="rating-box">
-                                          <div class="rating" style=" width:98% "></div>
-                                        </div>
-                                        <!--span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='/review/product/list/id/7/'; return false;">8 Review(s)</a></span-->
-                                      </div>
+                                        {#<p class="special-price">#}
+                {#<span class="price" id="product-price-89-widget-new-grid">#}
+                    {#£24.99                </span>#}
+                                        {#</p>#}
+
+
+                                      {#</div>#}
+
+                                    {#</div>#}
+                                  {#</div>#}
+                                {#</div>#}
 
 
 
-                                      <div class="price-box">
 
-                                        <p class="old-price">
-                <span class="price" id="old-price-7-widget-new-grid">
-                    £69.99                </span>
-                                        </p>
+                                {#<div class="col-md-4 col-sm-6 col-xs-12 row-2-first">#}
+                                  {#<div class="product-content">#}
+                                    {#<div class="product-top">#}
+                                      {#<a href="/bt1050-bluetooth-sports-in-ear-headphones.html" title="BT1050 Bluetooth Sports In-Ear Headphones" class="product-image">#}
+                                        {#<img src="catalog/view/javascript/common/img_0016_1.jpg" alt="BT1050 Bluetooth Sports In-Ear Headphones" class="img-responsive">#}
+                                        {#<img src="catalog/view/javascript/common/img_0016_1_002.jpg" alt="BT1050 Bluetooth Sports In-Ear Headphones" class="img-responsive img-two">#}
+                                      {#</a>#}
+                                      {#<div class="product-label new-label"><span class="new">New</span></div><div class="product-label sale-label"><span class="sale">Sale</span></div>						<div class="controls">#}
+                                        {#<div class="add-to-cart">#}
+                                          {#<button type="button" title="Add to Cart" class="btn btn-cart btn-default btn-xs" onclick="setLocation('/checkout/cart/add/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/product/7/form_key/53tgQVLILCtqQD1h/')"><i class="fa fa-shopping-cart"></i>Add to Cart</button>#}
+                                        {#</div>#}
+                                        {#<ul class="icon-links pull-right">#}
+                                          {#<li><button type="button" title="Add to Compare" onclick="setLocation('/catalog/product_compare/add/product/7/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/form_key/53tgQVLILCtqQD1h/')"><em class="fa fa-retweet"></em></button></li>#}
+                                        {#</ul>#}
+                                      {#</div>#}
+                                    {#</div>#}
+                                    {#<div class="product-desc">#}
+                                      {#<h4 class="product-name"><a href="/bt1050-bluetooth-sports-in-ear-headphones.html" title="BT1050 Bluetooth Sports In-Ear Headphones)">BT1050 Bluetooth Sports In-Ear Headphones</a></h4>#}
 
-                                        <p class="special-price">
-                <span class="price" id="product-price-7-widget-new-grid">
-                    £29.99                </span>
-                                        </p>
+                                      {#<div class="ratings">#}
+                                        {#<div class="rating-box">#}
+                                          {#<div class="rating" style=" width:98% "></div>#}
+                                        {#</div>#}
+                                        {#<!--span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='/review/product/list/id/7/'; return false;">8 Review(s)</a></span-->#}
+                                      {#</div>#}
 
 
-                                      </div>
 
-                                    </div>
-                                  </div>
-                                </div>
+                                      {#<div class="price-box">#}
+
+                                        {#<p class="old-price">#}
+                {#<span class="price" id="old-price-7-widget-new-grid">#}
+                    {#£69.99                </span>#}
+                                        {#</p>#}
+
+                                        {#<p class="special-price">#}
+                {#<span class="price" id="product-price-7-widget-new-grid">#}
+                    {#£29.99                </span>#}
+                                        {#</p>#}
+
+
+                                      {#</div>#}
+
+                                    {#</div>#}
+                                  {#</div>#}
+                                {#</div>#}
                               </div></div></div></div>
                         <div class="owl-controls clickable" style="display: none;"><div class="owl-buttons"><div class="owl-prev"><i class="fa fa-angle-left"></i></div><div class="owl-next"><i class="fa fa-angle-right"></i></div></div></div></div>
                     </div>
@@ -408,26 +453,26 @@
                   </div>			</div>
                 <div class="col-md-12 appear-animation fadeInLeft animated appear-animation-visible" data-appear-animation="fadeInLeft" style="">
 
-
+                 {% if list2.home_sale_product %}
                   <ul class="products-grid row-3 row" id="rate_product_container">
+                    {% for i in list2.home_sale_product %}
                     <li class="item col-md-4 col-sm-6 col-xs-6  first-row-item ">
                       <div class="product-content">
                         <div class="product-top">
-                          <a href="/AMNIE-bt1010-wireless-bluetooth-headphones-earphones-for-sports.html" title="AMNIE BT1010 Wireless Bluetooth Headphones Earphones for Sports" class="product-image">
-                            <img src="catalog/view/javascript/common/img_8420_002.jpg" alt="AMNIE BT1010 Wireless Bluetooth Headphones Earphones for Sports" class="img-responsive">
-                            <img src="catalog/view/javascript/common/img_8420.jpg" alt="AMNIE BT1010 Wireless Bluetooth Headphones Earphones for Sports" class="img-responsive img-two">
+                          <a href="{{  i.href }}" title="{{ i.meta_title }}" class="product-image">
+                            <img src="/image/{{ i.image }}" alt="{{ i.meta_title }}" class="img-responsive">
                           </a>
                           <div class="product-label sale-label"><span class="sale">Sale</span></div>						<div class="controls">
                             <div class="add-to-cart">
-                              <button type="button" title="Add to Cart" class="btn btn-cart btn-default btn-xs" onclick="setLocation('/checkout/cart/add/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/product/115/form_key/53tgQVLILCtqQD1h/')"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
+                              <button type="button" title="Add to Cart" class="btn btn-cart btn-default btn-xs"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
                             </div>
                             <ul class="icon-links pull-right">
-                              <li><button type="button" title="Add to Compare" onclick="setLocation('/catalog/product_compare/add/product/115/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/form_key/53tgQVLILCtqQD1h/')"><em class="fa fa-retweet"></em></button></li>
+                              <li><button type="button" title="Add to Compare"><em class="fa fa-retweet"></em></button></li>
                             </ul>
                           </div>
                         </div>
                         <div class="product-desc">
-                          <h4 class="product-name"><a href="/AMNIE-bt1010-wireless-bluetooth-headphones-earphones-for-sports.html" title="AMNIE BT1010 Wireless Bluetooth Headphones Earphones for Sports)">AMNIE BT1010 Wireless Bluetooth Headphones Earphones for Sports</a></h4>
+                          <h4 class="product-name"><a href="{{ i.image }}" title="{{ i.meta_title }}">{{  i.meta_title }}</a></h4>
 
                           <div class="ratings">
                             <div class="rating-box">
@@ -442,12 +487,12 @@
 
                             <p class="old-price">
                 <span class="price" id="old-price-115-widget-new-grid">
-                    £39.99                </span>
+                    {{ i.price }}                </span>
                             </p>
 
                             <p class="special-price">
                 <span class="price" id="product-price-115-widget-new-grid">
-                    £24.99                </span>
+                    {{ i.special }}                </span>
                             </p>
 
 
@@ -456,99 +501,149 @@
                         </div>
                       </div>
                     </li>
-                    <li class="item col-md-4 col-sm-6 col-xs-6 ">
-                      <div class="product-content">
-                        <div class="product-top">
-                          <a href="/AMNIE-dc950-high-definition-driver-earphones-headphones-red.html" title="DC950 High Definition Driver Earphones - Red" class="product-image">
-                            <img src="catalog/view/javascript/common/85763296_1__002.jpg" alt="DC950 High Definition Driver Earphones - Red" class="img-responsive">
-                            <img src="catalog/view/javascript/common/85763296_1_.jpg" alt="DC950 High Definition Driver Earphones - Red" class="img-responsive img-two">
-                          </a>
-                          <div class="product-label sale-label"><span class="sale">Sale</span></div>						<div class="controls">
-                            <div class="add-to-cart">
-                              <button type="button" title="Add to Cart" class="btn btn-cart btn-default btn-xs" onclick="setLocation('/checkout/cart/add/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/product/3/form_key/53tgQVLILCtqQD1h/')"><i class="fa fa-shopping-cart"></i>Add to Cart</button>
-                            </div>
-                            <ul class="icon-links pull-right">
-                              <li><button type="button" title="Add to Compare" onclick="setLocation('/catalog/product_compare/add/product/3/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/form_key/53tgQVLILCtqQD1h/')"><em class="fa fa-retweet"></em></button></li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="product-desc">
-                          <h4 class="product-name"><a href="/AMNIE-dc950-high-definition-driver-earphones-headphones-red.html" title="DC950 High Definition Driver Earphones - Red)">DC950 High Definition Driver Earphones - Red</a></h4>
-
-                          <div class="ratings">
-                            <div class="rating-box">
-                              <div class="rating" style=" width:100% "></div>
-                            </div>
-                            <!--span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='/review/product/list/id/3/'; return false;">3 Review(s)</a></span-->
-                          </div>
-
-
-
-                          <div class="price-box">
-
-                            <p class="old-price">
-                <span class="price" id="old-price-3-widget-new-grid">
-                    £16.99                </span>
-                            </p>
-
-                            <p class="special-price">
-                <span class="price" id="product-price-3-widget-new-grid">
-                    £12.99                </span>
-                            </p>
-
-
-                          </div>
-
-                        </div>
-                      </div>
-                    </li>
-                    <li class="item col-md-4 col-sm-6 col-xs-6  row-2-first">
-                      <div class="product-content">
-                        <div class="product-top">
-                          <a href="/AMNIE-noise-isolating-earphones-headphones-red.html" title="AMNIE RK300 in ear Headphones Noise Isolating Comfort fit Earphones for iPhone, iPad, iPod, Mp3 Players, Samsung etc - Red" class="product-image">
-                            <img src="catalog/view/javascript/common/85763947_1__002.jpg" alt="AMNIE RK300 in ear Headphones Noise Isolating Comfort fit Earphones for iPhone, iPad, iPod, Mp3 Players, Samsung etc - Red" class="img-responsive">
-                            <img src="catalog/view/javascript/common/85763947_1_.jpg" alt="AMNIE RK300 in ear Headphones Noise Isolating Comfort fit Earphones for iPhone, iPad, iPod, Mp3 Players, Samsung etc - Red" class="img-responsive img-two">
-                          </a>
-                          <div class="product-label sale-label"><span class="sale">Sale</span></div>						<div class="controls">
-                            <div class="add-to-cart">
-                            </div>
-                            <ul class="icon-links pull-right">
-                              <li><button type="button" title="Add to Compare" onclick="setLocation('/catalog/product_compare/add/product/5/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/form_key/53tgQVLILCtqQD1h/')"><em class="fa fa-retweet"></em></button></li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="product-desc">
-                          <h4 class="product-name"><a href="/AMNIE-noise-isolating-earphones-headphones-red.html" title="AMNIE RK300 in ear Headphones Noise Isolating Comfort fit Earphones for iPhone, iPad, iPod, Mp3 Players, Samsung etc - Red)">AMNIE RK300 in ear Headphones Noise Isolating Comfort fit Earphones for iPhone, iPad, iPod, Mp3 Players, Samsung etc - Red</a></h4>
-
-                          <div class="ratings">
-                            <div class="rating-box">
-                              <div class="rating" style=" width:100% "></div>
-                            </div>
-                            <!--span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='/review/product/list/id/5/'; return false;">1 Review(s)</a></span-->
-                          </div>
-
-
-
-                          <div class="price-box">
-
-                            <p class="old-price">
-                <span class="price" id="old-price-5-widget-new-grid">
-                    £24.99                </span>
-                            </p>
-
-                            <p class="special-price">
-                <span class="price" id="product-price-5-widget-new-grid">
-                    £10.99                </span>
-                            </p>
-
-
-                          </div>
-
-                        </div>
-                      </div>
-                    </li>
-
                   </ul>
+                  {% endfor %}
+                 {% endif %}
+                  {#<ul class="products-grid row-3 row" id="rate_product_container">#}
+                    {#<li class="item col-md-4 col-sm-6 col-xs-6  first-row-item ">#}
+                      {#<div class="product-content">#}
+                        {#<div class="product-top">#}
+                          {#<a href="/AMNIE-bt1010-wireless-bluetooth-headphones-earphones-for-sports.html" title="AMNIE BT1010 Wireless Bluetooth Headphones Earphones for Sports" class="product-image">#}
+                            {#<img src="catalog/view/javascript/common/img_8420_002.jpg" alt="AMNIE BT1010 Wireless Bluetooth Headphones Earphones for Sports" class="img-responsive">#}
+                            {#<img src="catalog/view/javascript/common/img_8420.jpg" alt="AMNIE BT1010 Wireless Bluetooth Headphones Earphones for Sports" class="img-responsive img-two">#}
+                          {#</a>#}
+                          {#<div class="product-label sale-label"><span class="sale">Sale</span></div>						<div class="controls">#}
+                            {#<div class="add-to-cart">#}
+                              {#<button type="button" title="Add to Cart" class="btn btn-cart btn-default btn-xs" onclick="setLocation('/checkout/cart/add/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/product/115/form_key/53tgQVLILCtqQD1h/')"><i class="fa fa-shopping-cart"></i>Add to Cart</button>#}
+                            {#</div>#}
+                            {#<ul class="icon-links pull-right">#}
+                              {#<li><button type="button" title="Add to Compare" onclick="setLocation('/catalog/product_compare/add/product/115/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/form_key/53tgQVLILCtqQD1h/')"><em class="fa fa-retweet"></em></button></li>#}
+                            {#</ul>#}
+                          {#</div>#}
+                        {#</div>#}
+                        {#<div class="product-desc">#}
+                          {#<h4 class="product-name"><a href="/AMNIE-bt1010-wireless-bluetooth-headphones-earphones-for-sports.html" title="AMNIE BT1010 Wireless Bluetooth Headphones Earphones for Sports)">AMNIE BT1010 Wireless Bluetooth Headphones Earphones for Sports</a></h4>#}
+
+                          {#<div class="ratings">#}
+                            {#<div class="rating-box">#}
+                              {#<div class="rating" style=" width:100% "></div>#}
+                            {#</div>#}
+                            {#<!--span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='/review/product/list/id/115/'; return false;">4 Review(s)</a></span-->#}
+                          {#</div>#}
+
+
+
+                          {#<div class="price-box">#}
+
+                            {#<p class="old-price">#}
+                {#<span class="price" id="old-price-115-widget-new-grid">#}
+                    {#£39.99                </span>#}
+                            {#</p>#}
+
+                            {#<p class="special-price">#}
+                {#<span class="price" id="product-price-115-widget-new-grid">#}
+                    {#£24.99                </span>#}
+                            {#</p>#}
+
+
+                          {#</div>#}
+
+                        {#</div>#}
+                      {#</div>#}
+                    {#</li>#}
+                    {#<li class="item col-md-4 col-sm-6 col-xs-6 ">#}
+                      {#<div class="product-content">#}
+                        {#<div class="product-top">#}
+                          {#<a href="/AMNIE-dc950-high-definition-driver-earphones-headphones-red.html" title="DC950 High Definition Driver Earphones - Red" class="product-image">#}
+                            {#<img src="catalog/view/javascript/common/85763296_1__002.jpg" alt="DC950 High Definition Driver Earphones - Red" class="img-responsive">#}
+                            {#<img src="catalog/view/javascript/common/85763296_1_.jpg" alt="DC950 High Definition Driver Earphones - Red" class="img-responsive img-two">#}
+                          {#</a>#}
+                          {#<div class="product-label sale-label"><span class="sale">Sale</span></div>						<div class="controls">#}
+                            {#<div class="add-to-cart">#}
+                              {#<button type="button" title="Add to Cart" class="btn btn-cart btn-default btn-xs" onclick="setLocation('/checkout/cart/add/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/product/3/form_key/53tgQVLILCtqQD1h/')"><i class="fa fa-shopping-cart"></i>Add to Cart</button>#}
+                            {#</div>#}
+                            {#<ul class="icon-links pull-right">#}
+                              {#<li><button type="button" title="Add to Compare" onclick="setLocation('/catalog/product_compare/add/product/3/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/form_key/53tgQVLILCtqQD1h/')"><em class="fa fa-retweet"></em></button></li>#}
+                            {#</ul>#}
+                          {#</div>#}
+                        {#</div>#}
+                        {#<div class="product-desc">#}
+                          {#<h4 class="product-name"><a href="/AMNIE-dc950-high-definition-driver-earphones-headphones-red.html" title="DC950 High Definition Driver Earphones - Red)">DC950 High Definition Driver Earphones - Red</a></h4>#}
+
+                          {#<div class="ratings">#}
+                            {#<div class="rating-box">#}
+                              {#<div class="rating" style=" width:100% "></div>#}
+                            {#</div>#}
+                            {#<!--span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='/review/product/list/id/3/'; return false;">3 Review(s)</a></span-->#}
+                          {#</div>#}
+
+
+
+                          {#<div class="price-box">#}
+
+                            {#<p class="old-price">#}
+                {#<span class="price" id="old-price-3-widget-new-grid">#}
+                    {#£16.99                </span>#}
+                            {#</p>#}
+
+                            {#<p class="special-price">#}
+                {#<span class="price" id="product-price-3-widget-new-grid">#}
+                    {#£12.99                </span>#}
+                            {#</p>#}
+
+
+                          {#</div>#}
+
+                        {#</div>#}
+                      {#</div>#}
+                    {#</li>#}
+                    {#<li class="item col-md-4 col-sm-6 col-xs-6  row-2-first">#}
+                      {#<div class="product-content">#}
+                        {#<div class="product-top">#}
+                          {#<a href="/AMNIE-noise-isolating-earphones-headphones-red.html" title="AMNIE RK300 in ear Headphones Noise Isolating Comfort fit Earphones for iPhone, iPad, iPod, Mp3 Players, Samsung etc - Red" class="product-image">#}
+                            {#<img src="catalog/view/javascript/common/85763947_1__002.jpg" alt="AMNIE RK300 in ear Headphones Noise Isolating Comfort fit Earphones for iPhone, iPad, iPod, Mp3 Players, Samsung etc - Red" class="img-responsive">#}
+                            {#<img src="catalog/view/javascript/common/85763947_1_.jpg" alt="AMNIE RK300 in ear Headphones Noise Isolating Comfort fit Earphones for iPhone, iPad, iPod, Mp3 Players, Samsung etc - Red" class="img-responsive img-two">#}
+                          {#</a>#}
+                          {#<div class="product-label sale-label"><span class="sale">Sale</span></div>						<div class="controls">#}
+                            {#<div class="add-to-cart">#}
+                            {#</div>#}
+                            {#<ul class="icon-links pull-right">#}
+                              {#<li><button type="button" title="Add to Compare" onclick="setLocation('/catalog/product_compare/add/product/5/uenc/aHR0cDovL3d3dy5iZXRyb25zdG9yZS5jby51ay8,/form_key/53tgQVLILCtqQD1h/')"><em class="fa fa-retweet"></em></button></li>#}
+                            {#</ul>#}
+                          {#</div>#}
+                        {#</div>#}
+                        {#<div class="product-desc">#}
+                          {#<h4 class="product-name"><a href="/AMNIE-noise-isolating-earphones-headphones-red.html" title="AMNIE RK300 in ear Headphones Noise Isolating Comfort fit Earphones for iPhone, iPad, iPod, Mp3 Players, Samsung etc - Red)">AMNIE RK300 in ear Headphones Noise Isolating Comfort fit Earphones for iPhone, iPad, iPod, Mp3 Players, Samsung etc - Red</a></h4>#}
+
+                          {#<div class="ratings">#}
+                            {#<div class="rating-box">#}
+                              {#<div class="rating" style=" width:100% "></div>#}
+                            {#</div>#}
+                            {#<!--span class="amount"><a href="#" onclick="var t = opener ? opener.window : window; t.location.href='/review/product/list/id/5/'; return false;">1 Review(s)</a></span-->#}
+                          {#</div>#}
+
+
+
+                          {#<div class="price-box">#}
+
+                            {#<p class="old-price">#}
+                {#<span class="price" id="old-price-5-widget-new-grid">#}
+                    {#£24.99                </span>#}
+                            {#</p>#}
+
+                            {#<p class="special-price">#}
+                {#<span class="price" id="product-price-5-widget-new-grid">#}
+                    {#£10.99                </span>#}
+                            {#</p>#}
+
+
+                          {#</div>#}
+
+                        {#</div>#}
+                      {#</div>#}
+                    {#</li>#}
+
+                  {#</ul>#}
 
                 </div>
               </div>								</div>
@@ -556,10 +651,10 @@
               <div class="row">
                 <div class="col-md-12 no-padding text-colour-white link-colour-white appear-animation fadeInRight animated appear-animation-visible" data-appear-animation="fadeInRight" style="">
                   <div class="promo-banner">
-                    <a href="/AMNIE-earphones-with-microphone.html"><img alt="YSM1000" src="catalog/view/javascript/common/img_0940.jpg" class="img-responsive"></a>
+                    <a href="{{ list2.category.meta_description }}"><img src="/image/{{ list2.category.image }}" class="img-responsive"></a>
                     <div class="text-container text-center">
                       <div class="text-hover">
-                        <h2 class="title-category">Aesthetically Pleasing</h2>
+                        <h2 class="title-category">{{ list2.category.name }}</h2>
                         <a class="a-default" href="#">VIEW</a>		</div>
                     </div>
                   </div>			</div>
