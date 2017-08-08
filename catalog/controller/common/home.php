@@ -40,6 +40,13 @@ class ControllerCommonHome extends Controller {
         $data['list2']['category'] = $homeSaleCategorie2;
         $data['list2']['home_sale_product'] = $homeSale2List;
 //        var_dump($data['list1']);exit;
+        $big_banner = $this->model_catalog_category->getHomeSaleCategorie('big-banner');
+        $data['big_banner'] = $big_banner[0];
+        $left_banner = $this->model_catalog_category->getHomeSaleCategorie('left-banner');
+        $data['left_banner'] = $left_banner[0];
+        $right_banner = $this->model_catalog_category->getHomeSaleCategorie('right-banner');
+        $data['right_banner'] = $right_banner[0];
+
 
 		$this->response->setOutput($this->load->view('common/home', $data));
 	}
