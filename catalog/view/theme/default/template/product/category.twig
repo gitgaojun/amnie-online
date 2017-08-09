@@ -1,7 +1,7 @@
 {{ header }}
 
 <div class="banner" data-reactid="80">
-  <div class="banner-img" data-reactid="81"><img src="{{ category_image }}">
+  <div class="banner-img" data-reactid="81"><img src="{% if category_image %}{{ category_image }}{% else %}/image/cache/no_image-100x100.png{% endif %}">
 
   </div>
 </div>
