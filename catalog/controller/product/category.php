@@ -521,6 +521,7 @@ class ControllerProductCategory extends Controller {
 			} else {
 				$data['thumb'] = '';
 			}
+			$data['category_image'] = '/image/' . $category_info['image'];
 
 			$data['description'] = html_entity_decode($category_info['description'], ENT_QUOTES, 'UTF-8');
 			$data['compare'] = $this->url->link('product/compare');
