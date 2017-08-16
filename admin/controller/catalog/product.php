@@ -649,13 +649,62 @@ class ControllerCatalogProduct extends Controller {
 			$data['mpn'] = '';
 		}
 
-		if (isset($this->request->post['location'])) {
-			$data['location'] = $this->request->post['location'];
-		} elseif (!empty($product_info)) {
-			$data['location'] = $product_info['location'];
-		} else {
-			$data['location'] = '';
-		}
+        if (isset($this->request->post['location'])) {
+            $data['location'] = $this->request->post['location'];
+        } elseif (!empty($product_info)) {
+            $data['location'] = $product_info['location'];
+        } else {
+            $data['location'] = '';
+        }
+        if (isset($this->request->post['us_location'])) {
+            $data['us_location'] = $this->request->post['us_location'];
+        } elseif (!empty($product_info)) {
+            $data['us_location'] = $product_info['us_location'];
+        } else {
+            $data['us_location'] = '';
+        }
+        if (isset($this->request->post['jp_location'])) {
+            $data['jp_location'] = $this->request->post['jp_location'];
+        } elseif (!empty($product_info)) {
+            $data['jp_location'] = $product_info['jp_location'];
+        } else {
+            $data['jp_location'] = '';
+        }
+        if (isset($this->request->post['it_location'])) {
+            $data['it_location'] = $this->request->post['it_location'];
+        } elseif (!empty($product_info)) {
+            $data['it_location'] = $product_info['it_location'];
+        } else {
+            $data['it_location'] = '';
+        }
+        if (isset($this->request->post['es_location'])) {
+            $data['es_location'] = $this->request->post['es_location'];
+        } elseif (!empty($product_info)) {
+            $data['es_location'] = $product_info['es_location'];
+        } else {
+            $data['es_location'] = '';
+        }
+        if (isset($this->request->post['fr_location'])) {
+            $data['fr_location'] = $this->request->post['fr_location'];
+        } elseif (!empty($product_info)) {
+            $data['fr_location'] = $product_info['fr_location'];
+        } else {
+            $data['fr_location'] = '';
+        }
+        if (isset($this->request->post['de_location'])) {
+            $data['de_location'] = $this->request->post['de_location'];
+        } elseif (!empty($product_info)) {
+            $data['de_location'] = $product_info['de_location'];
+        } else {
+            $data['de_location'] = '';
+        }
+        if (isset($this->request->post['uk_location'])) {
+            $data['uk_location'] = $this->request->post['uk_location'];
+        } elseif (!empty($product_info)) {
+            $data['uk_location'] = $product_info['uk_location'];
+        } else {
+            $data['uk_location'] = '';
+        }
 
 		$this->load->model('setting/store');
 

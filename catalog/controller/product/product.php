@@ -159,7 +159,14 @@ class ControllerProductProduct extends Controller {
 		$product_info = $this->model_catalog_product->getProduct($product_id);
 
 		if ($product_info) {
-		    $data['product_location'] = $product_info['location'];
+            $data['product_location'] = $product_info['location'];
+            $data['us_location'] = $product_info['us_location'];
+            $data['jp_location'] = $product_info['jp_location'];
+            $data['it_location'] = $product_info['it_location'];
+            $data['es_location'] = $product_info['es_location'];
+            $data['fr_location'] = $product_info['fr_location'];
+            $data['de_location'] = $product_info['de_location'];
+            $data['uk_location'] = $product_info['uk_location'];
 
 			$url = '';
 
